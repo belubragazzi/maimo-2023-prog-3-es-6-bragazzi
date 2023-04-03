@@ -69,22 +69,19 @@ APLICAR LA MAYOR CANTIDAD DE LAS COSAS QUE VIMOS
 */
 
 /* 
-1) Import songs array using modules.
-IMPORTAR DESDE CANCIONES EL ARRAY -> EXPORTAR E IMPORTAR */
+1) Import songs array using modules.*/
 
 import songs from "./songs.js";
 console.log("Ex 1:", songs);
 
 /* 
-2. Use the map function to create a new array with the title of each song in uppercase letters.
-HACER UN MAP DEVOLVER UN ARRAY CON TODAS LAS CANCIONES EN MAYUSCULAS () LUKI */
+2. Use the map function to create a new array with the title of each song in uppercase letters.*/
 
 const nameUp = songs.map(({ title }) => title.toUpperCase());
 
 console.log("Ex 2:", nameUp);
 
-/* 3. Use the filter() function to create a new array with all the songs released before 1975.
-CREAR LIBRERIA PARA TENER FUNCIONES AGREGADAS QUE VAMOS A USAR */
+/* 3. Use the filter() function to create a new array with all the songs released before 1975. */
 
 const beforeYear = songs.filter(({ year }) => {
   return year < 1975;
@@ -92,15 +89,13 @@ const beforeYear = songs.filter(({ year }) => {
 
 console.log("Ex 3:", beforeYear);
 
-/* 4. Use destructuring to create a variable that stores the title of the first song in the array.
-CREAR UNA VARIABLE Q ALMACENE EL TITULO DE LA PRIMER CANCION DE UN ARRAY */
+/* 4. Use destructuring to create a variable that stores the title of the first song in the array. */
 
 const { title: fisrtTitle } = songs[0];
 
 console.log("Ex 4:", fisrtTitle);
 
 /* 5. Use the find function to get the object representing the song "Hotel California".
-CREAR UNA FUNCION FIND PARA QUE TRAIGA EL HOTEL CALIFORIA me permite buscar con condicion
  */
 
 const hotCalObjetc = songs.find(({ title }) => title === "Hotel California");
@@ -109,9 +104,7 @@ console.log("Ex 5:", hotCalObjetc);
 
 /* 6. Use the rest operator to create a function that takes any number of arguments 
 and returns their sum. 
-(Tip: Use reduce)
-USAR RES OPERATOR PARA CREAR UNA FUNCION QUE TOME CUALQUIER CANTIDAD DE NUM USANDO REDUCE
-*/
+(Tip: Use reduce)*/
 const numbers = [1, 2, 3, 4, 55, 66, 12, 76, 5, 52];
 
 const sumaNumbers = numbers.reduce(
@@ -130,10 +123,7 @@ const sumaNumbers2 = (...values) => values.reduce(
 console.log('Ex 6bis:',sumaNumbers2(1, 2, 3, 4, 55, 66, 12, 76, 5, 52))
 
 /* 7. Use the map function and template literals to create a new array with strings in the format 
-"Title - Artist (Year)" for each song.
-HACER UN MAP Q ME DEVUELVA EN
-recorrer el array y por cada uno de los array bohemian rapsody - queen (1975)
- */
+"Title - Artist (Year)" for each song.*/
 
 const exSeven = songs.map(({ title, artist, year }) => {
   return `${title} - ${artist} (${year})`;
@@ -141,9 +131,7 @@ const exSeven = songs.map(({ title, artist, year }) => {
 console.log("Ex 7:", exSeven);
 
 /* 8. Use destructuring and the filter function to create a new array with the titles 
-of all the songs by The Beatles.
-con los títulos de todas las canciones de The Beatles 
-*/
+of all the songs by The Beatles.*/
 
 const beatlesSongs = songs
   .filter(({ artist }) => {
@@ -155,9 +143,6 @@ console.log("Ex 8:", beatlesSongs);
 
 /* 9. Use arrow functions and the reduce function to calculate the total 
 number of years between all the songs' release dates. (Tip: Use reduce)
-usar funcion flecha y reduce para crear una funcion en utils.js
-que te calcule el año promedio de las canciones sumar las canciones 
-y dividirlo por el total de las canciones, llevar a inter para sacar decimales
  */
 const sumaYears = songs.reduce((acumulator, { year }) => acumulator + year, 0);
 
@@ -194,8 +179,7 @@ console.log(
   `Ex 12: El primer elemento tiene como titulo ${titulo}, la banda ${banda} y el año ${anio}`
 );
 /* 
-13. Use the rest operator to create a new array without the first element.
-USAR EL REST OPERETOS PARA CREAR UN ARRAY SIN EL PRIMER ELEMENTO (,ELEMENT2,3,4) */
+13. Use the rest operator to create a new array without the first element. */
 
 const [, ...firstNone] = songs;
 console.log("Ex 13:", firstNone);
@@ -223,9 +207,6 @@ const checkYear = songs.some(({ year }) => year <= 1980);
 console.log("Ex 16: ¿Alguna canción es de los 80s?", checkYear);
 
 /* 17. Use a template literal to create a string that says "The Beatles released Let It Be in 1970."
-CREAR UN STRING Q DIGA LOS BEATLES LANZARON UNA 
-FIND Q TRAIGA LA CANCION LET IT BE Y DSP SOBRE ESO ARMAR EL TMPLE LITERAL PARA PONERLO DE LA FORMA QUE YO QUIERO
-FIND OBTENGO EL REGISTRO Y TRABAJO CON ESE DATO
  */
 const fun = songs.find(({title}) => title === "Let It Be" );
 
@@ -241,8 +222,7 @@ const justArtist = songs.map(({artist}) => artist);
 console.log(justArtist);
 /* 
 19. Create a function called randomMovie that returns one movie from the songs array randomly. 
-Log the call of this function 3 times.
-QUE RETORNE UNA ALEATORIAMENTE E IMPRIMIRLA 3 VECES DE FORMA ALEATORIA */
+Log the call of this function 3 times.*/
 
 function randomNumber(max, min) {
     return Math.floor(Math.random() * (max - min) + min)
@@ -256,7 +236,6 @@ console.log("Ex 19:", randomMovie(), randomMovie(), randomMovie())
 
 
 /* 20. Write your own function using at least 3 concepts. 
-ESCRIBIR UNA FUNNCION BASADO EN 3 CONCEPTOS DISTINTOS (TODOS LOS ARTISTAS Q EMPIEZAN CON A POR EJ)
 titulos de canciones lanzadas antes de los 80s*/
 
 const exTwenty = songs.filter(({year}) => year < 1980 ).map(({title}) => title);
